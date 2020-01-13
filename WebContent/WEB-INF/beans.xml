@@ -1,0 +1,70 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:context="http://www.springframework.org/schema/context"
+    xmlns:mvc="http://www.springframework.org/schema/mvc"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans 
+        http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+        http://www.springframework.org/schema/context 
+        http://www.springframework.org/schema/context/spring-context-3.0.xsd
+        http://www.springframework.org/schema/mvc
+        http://www.springframework.org/schema/mvc/spring-mvc-3.0.xsd">
+
+	<context:annotation-config />
+	<context:component-scan base-package="com.dhanjyothi" />
+
+	<!-- DAO Beans -->
+	<!-- 
+	<bean name="AccountDaoBean" class="com.dhanjyothi.dao.impl.AccountDaoImpl" />
+	<bean name="FileDaoBean" class="com.dhanjyothi.dao.impl.FileDaoImpl" />
+	<bean name="LoginDaoBean" class="com.dhanjyothi.dao.impl.LoginDaoImpl" />
+	<bean name="RegisterDaoBean" class="com.dhanjyothi.dao.impl.RegisterDaoImpl" />
+	 -->
+	 
+	<!-- Service Beans -->
+	<!-- 
+	<bean name="AccountServiceBean" class="com.dhanjyothi.service.impl.AccountServiceImpl" />
+	<bean name="FileServiceBean" class="com.dhanjyothi.service.impl.FileServiceImpl" />
+	<bean name="LoginServiceBean" class="com.dhanjyothi.service.impl.LoginServiceImpl" />
+	<bean name="RegisterServiceBean" class="com.dhanjyothi.service.impl.RegisterServiceImpl" /> 
+	-->
+	
+	<!-- Validators Beans -->
+	<!-- 
+	<bean name="BeneficiaryValidatorBean" class="com.dhanjyothi.validator.BeneficiaryValidator" />
+	<bean name="FundTransferValidatorBean" class="com.dhanjyothi.validator.FundTransferValidator" />
+	<bean name="RegistrationValidatorBean" class="com.dhanjyothi.validator.RegistrationValidator" />
+	<bean name="TermAccountValidatorBean" class="com.dhanjyothi.validator.TermAccountValidator" />
+	 -->
+	 
+	<!-- Datasource -->
+	<bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+		<property name="driverClassName" value="${jdbc.driverClassName}" />
+		<property name="url" value="${jdbc.url}" /> 
+		<property name="username" value="${jdbc.username}" /> 
+		<property name="password" value="${jdbc.password}" />
+	</bean>
+	<!-- <bean name="customHibernateDaoSupport" class="com.dhanjyothi.database.CustomHibernateDaoSupport" >
+		<property name="sessionFactory" ref="sess">
+	</bean> -->
+	
+	<import resource="hibernate/Hibernate.xml"/>
+	
+	<bean class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+		<property name="location">
+			<value>/WEB-INF/properties/database.properties</value>
+		</property>
+	</bean>
+		
+    <bean id="viewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver" >
+        <property name="prefix">
+            <value>/WEB-INF/pages/</value>
+        </property>
+        <property name="suffix">
+            <value>.jsp</value>
+        </property>
+    </bean>
+    
+    <mvc:resources mapping="/resources/**" location="/resources/" />
+    <mvc:annotation-driven />
+    
+</beans>

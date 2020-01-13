@@ -1,0 +1,130 @@
+
+
+/* Navigation Bar Style Start */ 
+.navbar {
+	overflow: hidden;
+	background-color: #333;
+}
+
+.navbar a {
+	float: left;
+	font-size: 16px;
+	color: white;
+	text-align: center;
+	padding: 14px 16px;
+	text-decoration: none;
+}
+
+.dropdown {
+	float: left;
+	overflow: hidden;
+}
+
+.dropdown .dropbtn {
+	font-size: 16px;
+	border: none;
+	outline: none;
+	color: white;
+	padding: 14px 16px;
+	background-color: inherit;
+	font-family: inherit;
+	margin: 0;
+}
+
+.navbar a:hover, .dropdown:hover .dropbtn {
+	background-color: red;
+}
+
+.dropdown-content {
+	display: none;
+	position: absolute;
+	background-color: #f9f9f9;
+	min-width: 160px;
+	box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+	z-index: 1;
+}
+
+.dropdown-content a {
+	float: none;
+	color: black;
+	padding: 12px 16px;
+	text-decoration: none;
+	display: block;
+	text-align: left;
+}
+
+.dropdown-content a:hover {
+	background-color: #ddd;
+}
+
+.dropdown:hover .dropdown-content {
+	display: block;
+}
+/* Navigation Bar Style End */
+
+/* Layout Style */
+.head_sec { 
+    font-size:15px; 
+    font-weight:bold; 
+} 
+.body_sec { 
+    margin-left:20px; 
+} 
+
+.page_desc { 
+    font-size:20px; 
+    font-weight:bold; 
+    width: 98%;
+    background-color: #333; 
+    color: #fff; 
+    position: fixed; 
+    padding-left: 10px;
+} 
+
+.footer_sec { 
+    width: 98.7%;
+    bottom: 0px; 
+    background-color: #000; 
+    color: #fff; 
+    position: absolute; 
+    padding-top:20px; 
+    padding-bottom:20px; 
+    text-align:center; 
+    font-size:15px; 
+    font-weight:bold; 
+} 
+/* Layout style end */
+
+.table_content thead,
+tfoot {
+    background-color: #3f87a6;
+    color: #fff;
+}
+
+.table_content tbody {
+    background-color: #e4f0f5;
+}
+
+.table_content caption {
+    padding: 10px;
+    caption-side: bottom;
+}
+
+.table_content {
+    border-collapse: collapse;
+    border: 2px solid rgb(200, 200, 200);
+    letter-spacing: 1px;
+    font-family: sans-serif;
+    font-size: .8rem;
+}
+
+.table_content td,
+th {
+    border: 1px solid rgb(190, 190, 190);
+    padding: 5px 10px;
+}
+
+.table_content td {
+    text-align: center;
+}
+
